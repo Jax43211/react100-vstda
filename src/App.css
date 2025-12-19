@@ -1,1 +1,302 @@
-/* Add your custom css here */
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+}
+
+.app-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.app-header .subtitle {
+  margin: 8px 0 0 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Content Layout */
+.app-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-section,
+.list-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+/* Forms */
+.todo-form,
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group textarea,
+.form-group select {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background-color: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-success {
+  background-color: #48bb78;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #38a169;
+}
+
+.btn-secondary {
+  background-color: #cbd5e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #a0aec0;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s;
+  color: #667eea;
+}
+
+.btn-link:hover {
+  color: #5568d3;
+  text-decoration: underline;
+}
+
+.delete-link {
+  color: #e53e3e;
+}
+
+.delete-link:hover {
+  color: #c53030;
+}
+
+.edit-link {
+  color: #ed8936;
+}
+
+.edit-link:hover {
+  color: #dd6b20;
+}
+
+/* Todo List */
+.todo-list {
+  min-height: 300px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  padding: 40px 20px;
+  font-style: italic;
+}
+
+.list-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Todo Item */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 6px;
+  border-left: 4px solid #ccc;
+  transition: all 0.3s;
+  gap: 12px;
+}
+
+.todo-item.priority-high {
+  background-color: #fed7d7;
+  border-left-color: #f56565;
+}
+
+.todo-item.priority-medium {
+  background-color: #feebc8;
+  border-left-color: #ed8936;
+}
+
+.todo-item.priority-low {
+  background-color: #c6f6d5;
+  border-left-color: #38a169;
+}
+
+.todo-item:hover:not(.editing-mode) {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(4px);
+}
+
+.todo-item.editing-mode {
+  padding: 0;
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-text {
+  flex: 1;
+  word-break: break-word;
+  color: #333;
+  font-size: 1rem;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.todo-actions .btn-link {
+  white-space: nowrap;
+}
+
+/* Edit Form in Todo Item */
+.edit-form {
+  width: 100%;
+  padding: 16px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-actions button {
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-actions {
+    width: 100%;
+  }
+
+  .todo-actions .btn-link {
+    display: inline-block;
+    margin-right: 12px;
+  }
+}
